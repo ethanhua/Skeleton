@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -29,4 +29,13 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
+}
+
+publish {
+    userOrg = 'ethanhua'//bintray.com用户名
+    groupId = 'com.ethanhua'//jcenter上的路径
+    artifactId = 'skeleton'//项目名称
+    publishVersion = '0.1.0'//版本号
+    desc = 'a library provider a easy way to show skeleton loading view'//描述，不重要
+    website = 'https://github.com/ethanhua/Skeleton'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }

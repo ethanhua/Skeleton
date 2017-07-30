@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_grid_item"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:background="@color/light_transparent"
+        android:layout_marginTop="16dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+    <View
+        android:background="@color/light_transparent"
+        android:text="Vin Diesel"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+    <View
+        android:background="@color/light_transparent"
+        android:layout_marginTop="8dp"
+        android:text="a famous actor"
+        android:textColor="@color/colorFontGreen"
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+    <View
+        android:background="@color/light_transparent"
+        android:layout_marginTop="8dp"
+        android:text="@string/fast_furious"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="12dp" />
+</LinearLayout>
