@@ -1,6 +1,6 @@
 # skeleton
 
-a liabrary provider a easy way to show skeleton loading view 
+a library provider a easy way to show skeleton loading view 
 
 ![](screenshots/1.gif)
 ![](screenshots/2.gif)
