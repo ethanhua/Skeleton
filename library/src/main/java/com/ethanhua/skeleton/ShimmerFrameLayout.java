@@ -487,7 +487,6 @@ public class ShimmerFrameLayout extends FrameLayout {
   /**
    * Get the dropoff of the current animation's highlight mask. Dropoff controls the size of the fading edge of the
    * highlight.
-   * <p/>
    * The default value of dropoff is 0.5.
    *
    * @return Dropoff of the highlight mask
@@ -498,7 +497,6 @@ public class ShimmerFrameLayout extends FrameLayout {
 
   /**
    * Set the dropoff of the animation's highlight mask, which defines the size of the highlight's fading edge.
-   * <p/>
    * It is the relative distance from the center at which the highlight mask's opacity is 0 i.e it is fully transparent.
    * For a linear mask, the distance is relative to the center towards the edges. For a radial mask, the distance is
    * relative to the center towards the circumference. So a dropoff of 0.5 on a linear mask will create a band that
@@ -561,7 +559,6 @@ public class ShimmerFrameLayout extends FrameLayout {
 
   /**
    * Set the intensity of the highlight mask, in the [0..1] range.
-   * <p/>
    * Intensity is the point relative to the center where opacity starts dropping off, so an intensity of 0 would mean
    * that the highlight starts becoming translucent immediately from the center (the spread is controlled by 'dropoff').
    *
@@ -1060,7 +1057,6 @@ public class ShimmerFrameLayout extends FrameLayout {
 
   /**
    * Creates a bitmap with the given width and height.
-   * <p/>
    * If it fails with an OutOfMemory error, it will force a GC and then try to create the bitmap
    * one more time.
    *
