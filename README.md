@@ -37,7 +37,8 @@ In your build.gradle:
        skeletonScreen = Skeleton.bind(rootView)
                                 .placeHolder(R.layout.layout_img_skeleton)
                                 .show();
-  when data return you could call 
+                                
+  when data return you can call the method to hide skeleton loading view 
    
        skeletonScreen.hide()
         
