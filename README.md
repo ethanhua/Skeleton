@@ -2,14 +2,12 @@
 
 a liabrary provider a easy way to show skeleton loading view 
 
-<img src='screenshots/1.gif' height=444 width=250 />
-<img src='screenshots/2.gif' height=444 width=250 />
-<img src='screenshots/3.gif' height=444 width=250 />
-<img src='screenshots/4.gif' height=444 width=250 />
+<img src='screenshots/1.gif' height=640 width=480 /> <img src='screenshots/2.gif' height=640 width=480 />
+<img src='screenshots/3.gif' height=640 width=480 /> <img src='screenshots/4.gif' height=640 width=480 />
 
 you can scan the qrcode for download demo apk
 
-![]()
+![](screenshots/qrcode.png)
 
 # Getting started
 
@@ -18,7 +16,9 @@ In your build.gradle:
     dependencies {
        compile 'com.ethanhua:skeleton:0.1.0'
     }
-
+# Feture
+- No invasive，You don't need to make changes to existing code.
+- Wide applicability，It is available for all views
 # Usage
   for recyclerview:
  
