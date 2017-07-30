@@ -2,10 +2,10 @@
 
 a library provider a easy way to show skeleton loading view 
 
-![](screenshots/1.gif)
-![](screenshots/2.gif)
-![](screenshots/3.gif)
-![](screenshots/4.gif)
+![img](screenshots/1.gif)
+![img](screenshots/2.gif)
+![img](screenshots/3.gif)
+![img](screenshots/4.gif)
 
 # Demo Apk
 
