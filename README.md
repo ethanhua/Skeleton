@@ -3,8 +3,8 @@
 a library provider a easy way to show skeleton loading view 
 
 ![img](screenshots/01.gif)
-![img](screenshots/2.gif)
-![img](screenshots/3.gif)
+![img](screenshots/02.gif)
+![img](screenshots/03.gif)
 ![img](screenshots/04.gif)
 
 # Demo Apk
