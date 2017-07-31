@@ -14,11 +14,6 @@ import java.util.List;
  */
 
 public class PersonAdapter extends RecyclerView.Adapter<SimpleRcvViewHolder> {
-    private List mDatas;
-
-    public PersonAdapter(List datas) {
-        this.mDatas = datas == null ? new ArrayList<>() : datas;
-    }
 
     @Override
     public SimpleRcvViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,7 +27,7 @@ public class PersonAdapter extends RecyclerView.Adapter<SimpleRcvViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mDatas.size();
+        return 10;
     }
 
 }

@@ -30,13 +30,11 @@ In your build.gradle:
        skeletonScreen = Skeleton.bind(recyclerView)
                                 .adapter(adapter)
                                 .count(10)
-                                .placeHolder(R.layout.item_skeleton_news)
-                                .show();
+                                .show(R.layout.item_skeleton_news);
   for view: 
    
        skeletonScreen = Skeleton.bind(rootView)
-                                .placeHolder(R.layout.layout_img_skeleton)
-                                .show();
+                                .show(R.layout.layout_img_skeleton);
                                 
   when data return you can call the method to hide skeleton loading view 
    

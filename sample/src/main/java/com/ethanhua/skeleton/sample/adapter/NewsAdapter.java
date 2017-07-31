@@ -15,11 +15,7 @@ import java.util.List;
  */
 
 public class NewsAdapter extends RecyclerView.Adapter<SimpleRcvViewHolder> {
-    private List<NewsModel> mDatas;
 
-    public NewsAdapter(List<NewsModel> newsModels) {
-        this.mDatas = newsModels==null?new ArrayList<NewsModel>():newsModels;
-    }
 
     @Override
     public SimpleRcvViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,7 +29,7 @@ public class NewsAdapter extends RecyclerView.Adapter<SimpleRcvViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mDatas.size();
+        return 10;
     }
 
 

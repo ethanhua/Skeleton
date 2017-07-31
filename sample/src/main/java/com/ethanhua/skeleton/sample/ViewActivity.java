@@ -2,12 +2,14 @@ package com.ethanhua.skeleton.sample;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
@@ -33,13 +35,14 @@ public class ViewActivity extends AppCompatActivity {
     public static class MyHandler extends android.os.Handler {
         private WeakReference<ViewActivity> activityWeakReference;
 
-        MyHandler(ViewActivity activity){
-            this.activityWeakReference=new WeakReference<>(activity);
+        MyHandler(ViewActivity activity) {
+            this.activityWeakReference = new WeakReference<>(activity);
         }
+
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if(activityWeakReference.get()!=null){
+            if (activityWeakReference.get() != null) {
                 activityWeakReference.get().skeletonScreen.hide();
             }
         }
@@ -53,7 +56,7 @@ public class ViewActivity extends AppCompatActivity {
         View rootView = findViewById(R.id.rootView);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         TopicAdapter adapter = new TopicAdapter();
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -61,18 +64,23 @@ public class ViewActivity extends AppCompatActivity {
         };
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            rootView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
         if (TYPE_VIEW.equals(mType)) {
-            skeletonScreen = Skeleton.bind(rootView)
-                                     .placeHolder(R.layout.activity_view_skeleton)
-                                     .show();
+            skeletonScreen = Skeleton.bind(rootView).show(R.layout.activity_view_skeleton);
         }
         if (TYPE_IMG_LOADING.equals(mType)) {
-            skeletonScreen = Skeleton.bind(rootView)
-                                     .placeHolder(R.layout.layout_img_skeleton)
-                                     .show();
+            skeletonScreen = Skeleton.bind(rootView).show(R.layout.layout_img_skeleton);
         }
-        MyHandler myHandler=new MyHandler(this);
-        myHandler.sendEmptyMessageDelayed(1,3000);
+        MyHandler myHandler = new MyHandler(this);
+        myHandler.sendEmptyMessageDelayed(1, 3000);
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            //只在7.0以下启用硬件加速,目前小米5 android7.0 启动硬件加速会导致屏幕闪烁
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+                    WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
+        }
     }
 
 

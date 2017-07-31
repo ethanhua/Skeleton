@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 public class ShimmerAdapter extends RecyclerView.Adapter<ShimmerViewHolder> {
 
-    private int mItemCount = 10;
-    private int mLayoutReference ;
+    private int mItemCount;
+    private int mLayoutReference;
 
 
     public void setItemCount(int itemCount) {
@@ -38,7 +38,6 @@ public class ShimmerAdapter extends RecyclerView.Adapter<ShimmerViewHolder> {
     public void setLayoutReference(int layoutReference) {
         this.mLayoutReference = layoutReference;
     }
-
 
 
 }

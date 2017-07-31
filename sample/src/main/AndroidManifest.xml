@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ViewActivity"/>
+        <activity android:name=".ViewActivity" android:hardwareAccelerated="false"/>
     </application>
 
 </manifest>

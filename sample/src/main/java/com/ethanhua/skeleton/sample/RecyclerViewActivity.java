@@ -46,15 +46,14 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
     private void init() {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         if (TYPE_LINEAR.equals(mType)) {
-            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-            NewsAdapter adapter = new NewsAdapter(getData());
+            NewsAdapter adapter = new NewsAdapter();
             final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
                     .count(10)
-                    .placeHolder(R.layout.item_skeleton_news)
-                    .show();
+                    .show(R.layout.item_skeleton_news);
             recyclerView.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -64,14 +63,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
             return;
         }
         if (TYPE_GRID.equals(mType)) {
-            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-            PersonAdapter adapter = new PersonAdapter(getData());
+            PersonAdapter adapter = new PersonAdapter();
             final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
-                    .placeHolder(R.layout.item_skeleton_person)
                     .count(10)
-                    .show();
+                    .show(R.layout.item_skeleton_person);
             recyclerView.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -81,15 +78,5 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
     }
 
-    public List getData() {
-        List datas = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            NewsModel item1 = new NewsModel();
-            item1.imgResID = R.drawable.img1;
-            item1.newsContent = "这里是新闻这里是新闻这里是新闻这里是新闻这里是新闻这里是新闻这里是新闻这里是新闻这里是新闻";
-            datas.add(item1);
-        }
-        return datas;
-    }
 }
 

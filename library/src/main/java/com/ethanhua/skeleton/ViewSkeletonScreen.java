@@ -10,19 +10,22 @@ import android.view.ViewGroup;
 
 public class ViewSkeletonScreen implements SkeletonScreen {
 
-    private View mActualView, mSkeletonView, mCurrentView;
-    private int mSkeletonResID, mActualViewIndexInParent;
+    private View mActualView;
+    private View mSkeletonView;
+    private View mCurrentView;
+    private int mSkeletonResId = -1;
+    private int mActualViewIndexInParent;
     private ViewGroup mParentView;
     private ViewGroup.LayoutParams mActualViewLayoutParams;
 
-    private ViewSkeletonScreen(View view, int resId) {
+    public ViewSkeletonScreen(View view) {
         this.mActualView = view;
-        this.mSkeletonResID = resId;
         init();
     }
 
     private void init() {
         mActualViewLayoutParams = mActualView.getLayoutParams();
+        mCurrentView = mActualView;
         mParentView = (ViewGroup) mActualView.getParent();
         if (mParentView == null) {
             mParentView = (ViewGroup) mActualView.getRootView().findViewById(android.R.id.content);
@@ -36,51 +39,36 @@ public class ViewSkeletonScreen implements SkeletonScreen {
         }
     }
 
-    private ShimmerFrameLayout generateShimmerContainerLayout() {
+    private ShimmerFrameLayout generateShimmerContainerLayout(int skeletonResId) {
         ShimmerFrameLayout shimmerFragmentLayout = (ShimmerFrameLayout) LayoutInflater.from(mActualView.getContext()).inflate(R.layout.layout_shimmer, mParentView, false);
-        View innerView = LayoutInflater.from(mActualView.getContext()).inflate(mSkeletonResID, shimmerFragmentLayout, false);
+        View innerView = LayoutInflater.from(mActualView.getContext()).inflate(skeletonResId, shimmerFragmentLayout, false);
         shimmerFragmentLayout.addView(innerView);
         shimmerFragmentLayout.setAutoStart(true);
         return shimmerFragmentLayout;
     }
 
     @Override
-    public void show() {
-        if (mCurrentView!=null&&mCurrentView == mSkeletonView) {
-            return;
+    public SkeletonScreen show(int resId) {
+        if (mSkeletonResId == resId) {
+            return this;
         }
-        mParentView.removeView(mActualView);
-        mSkeletonView = generateShimmerContainerLayout();
+        mSkeletonResId = resId;
+        mParentView.removeView(mCurrentView);
+        mSkeletonView = generateShimmerContainerLayout(resId);
         mParentView.addView(mSkeletonView, mActualViewIndexInParent, mActualViewLayoutParams);
         mCurrentView = mSkeletonView;
+        return this;
     }
 
     @Override
-    public void hide() {
-        if (mCurrentView == mSkeletonView) {
-            mParentView.removeView(mSkeletonView);
-            mParentView.addView(mActualView, mActualViewIndexInParent, mActualViewLayoutParams);
-        }
-    }
-
-    public static class Builder {
-        private View mView;
-        private int mResId;
-
-
-        public Builder(View view) {
-            this.mView = view;
-        }
-
-        public Builder placeHolder(int resId) {
-            this.mResId = resId;
+    public SkeletonScreen hide() {
+        if (mSkeletonResId == -1) {
             return this;
         }
-
-        public ViewSkeletonScreen show() {
-            ViewSkeletonScreen viewSkeletonScreen = new ViewSkeletonScreen(mView, mResId);
-            viewSkeletonScreen.show();
-            return viewSkeletonScreen;
-        }
+        mParentView.removeView(mSkeletonView);
+        mParentView.addView(mActualView, mActualViewIndexInParent, mActualViewLayoutParams);
+        mSkeletonResId = -1;
+        return this;
     }
+
 }
