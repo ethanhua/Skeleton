@@ -5,10 +5,10 @@ a library provide a easy way to show skeleton loading view like facebook and ali
 # Overview
 
 
-![img](screenshots/01.gif)
-![img](screenshots/02.gif)
-![img](screenshots/03.gif)
-![img](screenshots/04.gif)
+![img](screenshots/001.gif)
+![img](screenshots/002.gif)
+![img](screenshots/003.gif)
+![img](screenshots/004.gif)
 
 # Demo Apk
 
@@ -21,7 +21,7 @@ you can scan the qrcode for download demo apk
 In your build.gradle:
 
     dependencies {
-       compile 'com.ethanhua:skeleton:0.1.0'
+       compile 'com.ethanhua:skeleton:0.1.1'
     }
     
 # Feature
