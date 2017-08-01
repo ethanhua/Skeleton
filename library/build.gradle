@@ -32,10 +32,12 @@ dependencies {
 }
 
 publish {
-    userOrg = 'ethanhua'//bintray.com用户名
-    groupId = 'com.ethanhua'//jcenter上的路径
-    artifactId = 'skeleton'//项目名称
-    publishVersion = '0.1.0'//版本号
-    desc = 'a library provider a easy way to show skeleton loading view'//描述，不重要
-    website = 'https://github.com/ethanhua/Skeleton'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+    userOrg = 'ethanhua'
+    groupId = 'com.ethanhua'
+    artifactId = 'skeleton'
+    publishVersion = '0.1.1'
+    bintrayUser = 'ethanhua'
+    bintrayKey = ''
+    desc = 'a library provider a easy way to show skeleton loading view'
+    website = 'https://github.com/ethanhua/Skeleton'
 }

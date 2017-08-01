@@ -64,9 +64,6 @@ public class ViewActivity extends AppCompatActivity {
         };
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            rootView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
         if (TYPE_VIEW.equals(mType)) {
             skeletonScreen = Skeleton.bind(rootView).show(R.layout.activity_view_skeleton);
         }
