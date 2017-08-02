@@ -25,6 +25,7 @@ In your build.gradle:
     }
     
 # Feature
+- Light
 - No invasive，You don't need to make changes to existing code.
 - Wide applicability，It is available for all views
 # Usage
