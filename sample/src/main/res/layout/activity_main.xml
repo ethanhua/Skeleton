@@ -36,5 +36,10 @@
         android:text="imgloading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/btn_status"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="more usage"
+        android:layout_height="wrap_content" />
 </LinearLayout>

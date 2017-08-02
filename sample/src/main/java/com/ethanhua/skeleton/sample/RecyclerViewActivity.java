@@ -52,8 +52,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
             NewsAdapter adapter = new NewsAdapter();
             final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
+                    .load(R.layout.item_skeleton_news)
                     .count(10)
-                    .show(R.layout.item_skeleton_news);
+                    .show();
             recyclerView.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -67,8 +68,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
             PersonAdapter adapter = new PersonAdapter();
             final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
+                    .load(R.layout.item_skeleton_person)
                     .count(10)
-                    .show(R.layout.item_skeleton_person);
+                    .show();
             recyclerView.postDelayed(new Runnable() {
                 @Override
                 public void run() {

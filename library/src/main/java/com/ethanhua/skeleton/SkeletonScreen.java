@@ -7,7 +7,7 @@ package com.ethanhua.skeleton;
 public interface SkeletonScreen {
 
 
-    SkeletonScreen show(int resId);
+    void show();
 
-    SkeletonScreen hide();
+    void hide();
 }

@@ -1,10 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest package="com.ethanhua.skeleton"/>
 
-    package="com.ethanhua.skeleton">
 
-    <application android:allowBackup="true" android:label="@string/app_name"
-        android:supportsRtl="true">
 
-    </application>
-
-</manifest>

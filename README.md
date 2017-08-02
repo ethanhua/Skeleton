@@ -21,7 +21,7 @@ you can scan the qrcode for download demo apk
 In your build.gradle:
 
     dependencies {
-       compile 'com.ethanhua:skeleton:0.1.1'
+       compile 'com.ethanhua:skeleton:0.2.0'
     }
     
 # Feature
@@ -32,12 +32,14 @@ In your build.gradle:
  
        skeletonScreen = Skeleton.bind(recyclerView)
                                 .adapter(adapter)
+                                .load(R.layout.item_skeleton_news)
                                 .count(10)
-                                .show(R.layout.item_skeleton_news);
+                                .show();
   for view: 
    
        skeletonScreen = Skeleton.bind(rootView)
-                                .show(R.layout.layout_img_skeleton);
+                                .load(R.layout.layout_img_skeleton)
+                                .show();
                                 
   when data return you can call the method to hide skeleton loading view 
    

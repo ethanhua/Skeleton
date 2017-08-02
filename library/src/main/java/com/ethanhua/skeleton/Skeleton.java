@@ -9,12 +9,12 @@ import android.view.View;
 
 public class Skeleton {
 
-    public static RecyclerViewSkeletonScreen.builder bind(RecyclerView recyclerView) {
-        return new RecyclerViewSkeletonScreen.builder(recyclerView);
+    public static RecyclerViewSkeletonScreen.Builder bind(RecyclerView recyclerView) {
+        return new RecyclerViewSkeletonScreen.Builder(recyclerView);
     }
 
-    public static ViewSkeletonScreen bind(View view) {
-        return new ViewSkeletonScreen(view);
+    public static ViewSkeletonScreen.Builder bind(View view) {
+        return new ViewSkeletonScreen.Builder(view);
     }
 
 }

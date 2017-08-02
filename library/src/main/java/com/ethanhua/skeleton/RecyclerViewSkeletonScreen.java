@@ -13,59 +13,61 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     private RecyclerView.Adapter mActualAdapter;
     private ShimmerAdapter mSkeletonAdapter;
     private int mItemCount;
-    private int mItemResId;
+    private int mItemResID;
 
 
     private RecyclerViewSkeletonScreen(RecyclerView recyclerView,
                                        RecyclerView.Adapter adapter,
+                                       int itemResID,
                                        int itemCount) {
         this.mRecyclerView = recyclerView;
         mActualAdapter = adapter;
+        mItemResID = itemResID;
         mItemCount = itemCount;
         mSkeletonAdapter = new ShimmerAdapter();
         mSkeletonAdapter.setItemCount(mItemCount);
+        mSkeletonAdapter.setLayoutReference(mItemResID);
     }
 
     @Override
-    public SkeletonScreen show(int resId) {
-        if (mItemResId == resId) {
-            return this;
-        }
-        mItemResId = resId;
-        mSkeletonAdapter.setLayoutReference(resId);
+    public void show() {
         mRecyclerView.setAdapter(mSkeletonAdapter);
-        return this;
     }
 
     @Override
-    public SkeletonScreen hide() {
+    public void hide() {
         mRecyclerView.setAdapter(mActualAdapter);
-        return this;
     }
 
 
-    public static class builder {
+    public static class Builder {
         private RecyclerView.Adapter mActualAdapter;
         private RecyclerView mRecyclerView;
         private int mItemCount = 10;
+        private int mItemResID = R.layout.layout_default_item_skeleton;
 
-        public builder(RecyclerView recyclerView) {
+        public Builder(RecyclerView recyclerView) {
             this.mRecyclerView = recyclerView;
         }
 
-        public builder adapter(RecyclerView.Adapter adapter) {
+        public Builder adapter(RecyclerView.Adapter adapter) {
             this.mActualAdapter = adapter;
             return this;
         }
 
-        public builder count(int itemCount) {
+        public Builder count(int itemCount) {
             this.mItemCount = itemCount;
             return this;
         }
 
-        public RecyclerViewSkeletonScreen show(int resId) {
-            RecyclerViewSkeletonScreen recyclerViewSkeleton = new RecyclerViewSkeletonScreen(mRecyclerView, mActualAdapter, mItemCount);
-            recyclerViewSkeleton.show(resId);
+        public Builder load(int skeletonLayoutResID) {
+            this.mItemResID = skeletonLayoutResID;
+            return this;
+        }
+
+        public RecyclerViewSkeletonScreen show() {
+            RecyclerViewSkeletonScreen recyclerViewSkeleton = new RecyclerViewSkeletonScreen(mRecyclerView, mActualAdapter, mItemResID, mItemCount);
+            recyclerViewSkeleton.show();
             return recyclerViewSkeleton;
         }
     }

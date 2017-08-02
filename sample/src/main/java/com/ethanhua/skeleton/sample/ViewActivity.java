@@ -65,10 +65,10 @@ public class ViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
         if (TYPE_VIEW.equals(mType)) {
-            skeletonScreen = Skeleton.bind(rootView).show(R.layout.activity_view_skeleton);
+            skeletonScreen = Skeleton.bind(rootView).load(R.layout.activity_view_skeleton).show();
         }
         if (TYPE_IMG_LOADING.equals(mType)) {
-            skeletonScreen = Skeleton.bind(rootView).show(R.layout.layout_img_skeleton);
+            skeletonScreen = Skeleton.bind(rootView).load(R.layout.layout_img_skeleton).show();
         }
         MyHandler myHandler = new MyHandler(this);
         myHandler.sendEmptyMessageDelayed(1, 3000);
