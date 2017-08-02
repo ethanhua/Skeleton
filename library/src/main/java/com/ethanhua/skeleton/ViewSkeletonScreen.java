@@ -12,9 +12,9 @@ import android.view.ViewParent;
 
 public class ViewSkeletonScreen implements SkeletonScreen {
     private static final String TAG = ViewSkeletonScreen.class.getName();
-    private ViewReplacer mViewReplacer;
-    private View mActualView;
-    private int mSkeletonResID;
+    private final ViewReplacer mViewReplacer;
+    private final View mActualView;
+    private final int mSkeletonResID;
 
     private ViewSkeletonScreen(View view, int skeletonResID) {
         this.mActualView = view;
@@ -50,7 +50,7 @@ public class ViewSkeletonScreen implements SkeletonScreen {
     }
 
     public static class Builder {
-        private View mView;
+        private final View mView;
         private int mSkeletonLayoutResID;
 
         public Builder(View view) {

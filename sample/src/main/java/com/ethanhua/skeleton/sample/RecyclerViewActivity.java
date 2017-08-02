@@ -13,10 +13,6 @@ import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.ethanhua.skeleton.sample.adapter.NewsAdapter;
 import com.ethanhua.skeleton.sample.adapter.PersonAdapter;
-import com.ethanhua.skeleton.sample.model.NewsModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ethanhua on 2017/7/27.

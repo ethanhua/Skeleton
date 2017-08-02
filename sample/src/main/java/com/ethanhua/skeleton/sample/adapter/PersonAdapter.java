@@ -6,9 +6,6 @@ import android.view.ViewGroup;
 
 import com.ethanhua.skeleton.sample.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by ethanhua on 2017/7/29.
  */

@@ -12,8 +12,6 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mActualAdapter;
     private ShimmerAdapter mSkeletonAdapter;
-    private int mItemCount;
-    private int mItemResID;
 
 
     private RecyclerViewSkeletonScreen(RecyclerView recyclerView,
@@ -22,8 +20,8 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
                                        int itemCount) {
         this.mRecyclerView = recyclerView;
         mActualAdapter = adapter;
-        mItemResID = itemResID;
-        mItemCount = itemCount;
+        int mItemResID = itemResID;
+        int mItemCount = itemCount;
         mSkeletonAdapter = new ShimmerAdapter();
         mSkeletonAdapter.setItemCount(mItemCount);
         mSkeletonAdapter.setLayoutReference(mItemResID);

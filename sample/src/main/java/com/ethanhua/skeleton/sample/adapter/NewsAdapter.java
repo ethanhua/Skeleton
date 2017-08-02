@@ -5,10 +5,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.ethanhua.skeleton.sample.R;
-import com.ethanhua.skeleton.sample.model.NewsModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ethanhua on 2017/7/27.
