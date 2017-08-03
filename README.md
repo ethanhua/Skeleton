@@ -5,7 +5,7 @@ a library provide a easy way to show skeleton loading view like facebook and ali
 # Preview
 
 
-![img](https://github.com/sharish/ShimmerRecyclerView/raw/master/screenshots/list_demo.gif)
+![img](screenshots/001.gif)
 ![img](screenshots/002.gif)
 ![img](screenshots/003.gif)
 ![img](screenshots/004.gif)
