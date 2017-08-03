@@ -56,12 +56,7 @@ public class ViewActivity extends AppCompatActivity {
         View rootView = findViewById(R.id.rootView);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         TopicAdapter adapter = new TopicAdapter();
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) {
-            @Override
-            public boolean canScrollVertically() {
-                return false;
-            }
-        };
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
         if (TYPE_VIEW.equals(mType)) {

@@ -49,8 +49,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
             final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
                     .load(R.layout.item_skeleton_news)
-                    .count(10)
-                    .show();
+                    .show(); //default count is 10
             recyclerView.postDelayed(new Runnable() {
                 @Override
                 public void run() {

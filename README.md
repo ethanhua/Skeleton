@@ -2,10 +2,10 @@
 
 a library provide a easy way to show skeleton loading view like facebook and alipay
 
-# Overview
+# Preview
 
 
-![img](screenshots/001.gif)
+![img](https://github.com/sharish/ShimmerRecyclerView/raw/master/screenshots/list_demo.gif)
 ![img](screenshots/002.gif)
 ![img](screenshots/003.gif)
 ![img](screenshots/004.gif)
@@ -16,6 +16,11 @@ you can scan the qrcode for download demo apk
 
 ![](screenshots/qrcode.png)
 
+# Feature
+- Light
+- Noninvasive，You don't need to make changes to existing code.
+- Wide applicability，It is available for all views
+
 # Getting started
 
 In your build.gradle:
@@ -24,10 +29,7 @@ In your build.gradle:
        compile 'com.ethanhua:skeleton:0.2.0'
     }
     
-# Feature
-- Light
-- No invasive，You don't need to make changes to existing code.
-- Wide applicability，It is available for all views
+
 # Usage
   for recyclerview:
  
