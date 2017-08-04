@@ -30,11 +30,17 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     @Override
     public void show() {
         mRecyclerView.setAdapter(mSkeletonAdapter);
+        if (!mRecyclerView.isComputingLayout()) {
+            mRecyclerView.setLayoutFrozen(true);
+        }
     }
 
     @Override
     public void hide() {
         mRecyclerView.setAdapter(mActualAdapter);
+        if (!mRecyclerView.isComputingLayout()) {
+            mRecyclerView.setLayoutFrozen(false);
+        }
     }
 
 

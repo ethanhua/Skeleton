@@ -7,8 +7,8 @@ android {
         applicationId "com.ethanhua.skeleton.sample"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 3
-        versionName "0.2.0"
+        versionCode 4
+        versionName "0.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
