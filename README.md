@@ -26,7 +26,7 @@ you can scan the qrcode for download demo apk
 In your build.gradle:
 
     dependencies {
-       compile 'com.ethanhua:skeleton:0.2.0'
+       compile 'com.ethanhua:skeleton:0.2.1'
     }
     
 
