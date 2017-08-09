@@ -18,11 +18,13 @@ public class ViewReplacer {
     private ViewGroup mSourceParentView;
     private ViewGroup.LayoutParams mSourceViewLayoutParams;
     private int mSourceViewIndexInParent = 0;
+    private int mSourceViewId;
 
     public ViewReplacer(View sourceView) {
         mSourceView = sourceView;
         mSourceViewLayoutParams = mSourceView.getLayoutParams();
         mCurrentView = mSourceView;
+        mSourceViewId = mSourceView.getId();
     }
 
 
@@ -46,6 +48,7 @@ public class ViewReplacer {
         if (init()) {
             mTargetView = targetView;
             mSourceParentView.removeView(mCurrentView);
+            mTargetView.setId(mSourceViewId);
             mSourceParentView.addView(mTargetView, mSourceViewIndexInParent, mSourceViewLayoutParams);
             mCurrentView = mTargetView;
         }
@@ -56,6 +59,8 @@ public class ViewReplacer {
             mSourceParentView.removeView(mCurrentView);
             mSourceParentView.addView(mSourceView, mSourceViewIndexInParent, mSourceViewLayoutParams);
             mCurrentView = mSourceView;
+            mTargetView = null;
+            mTargetViewResID = -1;
         }
     }
 

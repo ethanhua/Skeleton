@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:text="暂无数据"
+    android:text="this is empty view"
     android:layout_gravity="center"
     android:gravity="center"
     android:layout_width="wrap_content"

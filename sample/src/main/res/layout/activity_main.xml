@@ -11,6 +11,7 @@
     <Button
         android:id="@+id/btn_list"
         android:layout_marginTop="10dp"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="List"
@@ -25,20 +26,23 @@
     <Button
         android:id="@+id/btn_view"
         android:layout_marginTop="10dp"
-        android:text="view"
+        android:text="View"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_Imgloading"
         android:layout_marginTop="10dp"
-        android:text="imgloading"
+        android:text="Image"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn_status"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
+        android:textAllCaps="false"
         android:text="more usage"
         android:layout_height="wrap_content" />
 </LinearLayout>

@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="loading"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/btn_error"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="error"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@+id/btn_loading"
         app:layout_constraintRight_toLeftOf="@+id/btn_empty"
         app:layout_constraintTop_toTopOf="@+id/btn_loading" />
@@ -29,12 +31,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="empty"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@+id/btn_error"
         app:layout_constraintRight_toLeftOf="@+id/btn_content"
         app:layout_constraintTop_toTopOf="@+id/btn_loading" />
     <Button
         android:id="@+id/btn_content"
         android:text="content"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@+id/btn_empty"
         app:layout_constraintTop_toTopOf="@+id/btn_loading"
         app:layout_constraintRight_toRightOf="parent"
@@ -53,7 +57,7 @@
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="wrap_content"
-            android:text="welcome! hope that is useful to you"
+            android:text="this is content view"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
     </FrameLayout>
