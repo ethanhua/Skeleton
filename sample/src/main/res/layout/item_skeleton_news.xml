@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:layout_marginBottom="8dp"
-    android:background="@android:color/white">
+    android:background="@android:color/transparent">
 
     <View
         android:layout_width="0dp"

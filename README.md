@@ -1,6 +1,6 @@
-# skeleton
+# Skeleton
 
-a library provide a easy way to show skeleton loading view like facebook and alipay
+The library provides an easy way to show skeleton loading view like Facebook and Alipay. It now uses a memory optimised version of shimmer animation so it is even faster and you can animate bigger layouts as well.
 
 # Preview
 
@@ -18,8 +18,10 @@ you can scan the qrcode for download demo apk
 
 # Feature
 - Light
-- Noninvasive，You don't need to make changes to existing code.
-- Wide applicability，It is available for all views
+- Different colors can be set for the shimmer effect
+- Noninvasive, you don't need to make changes to existing code.
+- Wide applicability，it is available for all views
+- Memory optimised
 
 # Getting started
 
@@ -31,17 +33,19 @@ In your build.gradle:
     
 
 # Usage
-  for recyclerview:
+  For RecyclerView:
  
        skeletonScreen = Skeleton.bind(recyclerView)
                                 .adapter(adapter)
                                 .load(R.layout.item_skeleton_news)
                                 .count(10)
+                                .color(R.color.shimmer_color)
                                 .show();
-  for view: 
+  For View: 
    
        skeletonScreen = Skeleton.bind(rootView)
                                 .load(R.layout.layout_img_skeleton)
+                                .color(R.color.shimmer_color)
                                 .show();
                                 
   when data return you can call the method to hide skeleton loading view 
@@ -50,10 +54,10 @@ In your build.gradle:
         
  # Thanks
  
+ https://github.com/team-supercharge/ShimmerLayout
+
  https://github.com/sharish/ShimmerRecyclerView
- 
- https://github.com/facebook/shimmer-android
- 
+
  # License
  
     Copyright 2017, ethanhua
