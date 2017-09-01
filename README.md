@@ -1,6 +1,7 @@
 # Skeleton
 
-The library provides an easy way to show skeleton loading view like Facebook and Alipay. It now uses a memory optimised version of shimmer animation so it is even faster and you can animate bigger layouts as well.
+The library provides an easy way to show skeleton loading view like Facebook and Alipay. 
+It now uses a memory optimised version of shimmer animation so it is even faster and you can animate bigger layouts as well.
 
 # Preview
 
@@ -17,8 +18,8 @@ you can scan the qrcode for download demo apk
 ![](screenshots/qrcode.png)
 
 # Feature
+
 - Light
-- Different colors can be set for the shimmer effect
 - Noninvasive, you don't need to make changes to existing code.
 - Wide applicability，it is available for all views
 - Memory optimised
@@ -36,25 +37,25 @@ In your build.gradle:
   For RecyclerView:
  
        skeletonScreen = Skeleton.bind(recyclerView)
-                                 .adapter(adapter)
-                                 .load(R.layout.item_skeleton_news)
-                                 .show();
+                                .adapter(adapter)
+                                .load(R.layout.item_skeleton_news)
+                                .show();
                                 
                          
   For View: 
       
        skeletonScreen = Skeleton.bind(rootView)
-                                 .load(R.layout.layout_img_skeleton)
-                                 .show();
+                                .load(R.layout.layout_img_skeleton)
+                                .show();
                                 
                        
   More Config:
   
-       .shimmer(true) //whether show shimmer animation .default is true
-       .count(10) //the recycler view item count. default is 10
-       .color(color) //the shimmer color default is #a2878787
-       .angle(20) //the shimmer angle default is 20;
-       .duration(1000)//the shimmer animation duration default is 1000;
+       .shimmer(true)      // whether show shimmer animation.  default is true
+       .count(10)          // the recycler view item count.    default is 10
+       .color(color)       // the shimmer color.               default is #a2878787
+       .angle(20)          // the shimmer angle.               default is 20;
+       .duration(1000)     // the shimmer animation duration.  default is 1000;
                                 
   when data return you can call the method to hide skeleton loading view 
    
