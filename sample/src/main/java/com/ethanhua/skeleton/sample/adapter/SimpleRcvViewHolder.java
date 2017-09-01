@@ -6,7 +6,7 @@ import android.view.View;
 
 
 public class SimpleRcvViewHolder extends RecyclerView.ViewHolder {
-    private SparseArray<View> views = new SparseArray<>();
+    private final SparseArray<View> views = new SparseArray<>();
 
     public SimpleRcvViewHolder(View itemView) {
         super(itemView);

@@ -11,14 +11,14 @@ import android.view.ViewGroup;
 
 public class ViewReplacer {
     private static final String TAG = ViewReplacer.class.getName();
-    private View mSourceView;
+    private final View mSourceView;
     private View mTargetView;
     private int mTargetViewResID = -1;
     private View mCurrentView;
     private ViewGroup mSourceParentView;
-    private ViewGroup.LayoutParams mSourceViewLayoutParams;
+    private final ViewGroup.LayoutParams mSourceViewLayoutParams;
     private int mSourceViewIndexInParent = 0;
-    private int mSourceViewId;
+    private final int mSourceViewId;
 
     public ViewReplacer(View sourceView) {
         mSourceView = sourceView;

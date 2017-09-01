@@ -46,8 +46,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
         if (TYPE_LINEAR.equals(mType)) {
             recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             NewsAdapter adapter = new NewsAdapter();
-            final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView, this)
+            final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
+                    .shimmer(true)
+                    .angle(20)
+                    .duration(1200)
+                    .count(10)
                     .load(R.layout.item_skeleton_news)
                     .show(); //default count is 10
             recyclerView.postDelayed(new Runnable() {
@@ -61,10 +65,10 @@ public class RecyclerViewActivity extends AppCompatActivity {
         if (TYPE_GRID.equals(mType)) {
             recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             PersonAdapter adapter = new PersonAdapter();
-            final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView, this)
+            final SkeletonScreen skeletonScreen = Skeleton.bind(recyclerView)
                     .adapter(adapter)
                     .load(R.layout.item_skeleton_person)
-                    .count(10)
+                    .shimmer(false)
                     .show();
             recyclerView.postDelayed(new Runnable() {
                 @Override

@@ -43,7 +43,6 @@ public class StatusViewActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void gotoSet(View view) {

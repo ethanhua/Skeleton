@@ -1,6 +1,8 @@
 package com.ethanhua.skeleton;
 
-import android.content.Context;
+import android.support.annotation.ColorRes;
+import android.support.annotation.IntRange;
+import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 
@@ -10,18 +12,20 @@ import android.support.v7.widget.RecyclerView;
 
 public class RecyclerViewSkeletonScreen implements SkeletonScreen {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mActualAdapter;
-    private ShimmerAdapter mSkeletonAdapter;
+    private final RecyclerView mRecyclerView;
+    private final RecyclerView.Adapter mActualAdapter;
+    private final SkeletonAdapter mSkeletonAdapter;
 
     private RecyclerViewSkeletonScreen(Builder builder) {
-        this.mRecyclerView = builder.mRecyclerView;
-        this.mActualAdapter = builder.mActualAdapter;
-
-        this.mSkeletonAdapter = new ShimmerAdapter();
-        this.mSkeletonAdapter.setItemCount(builder.mItemCount);
-        this.mSkeletonAdapter.setLayoutReference(builder.mItemResID);
-        this.mSkeletonAdapter.setColor(builder.mColor);
+        mRecyclerView = builder.mRecyclerView;
+        mActualAdapter = builder.mActualAdapter;
+        mSkeletonAdapter = new SkeletonAdapter();
+        mSkeletonAdapter.setItemCount(builder.mItemCount);
+        mSkeletonAdapter.setLayoutReference(builder.mItemResID);
+        mSkeletonAdapter.shimmer(builder.mShimmer);
+        mSkeletonAdapter.setShimmerColor(builder.mShimmerColor);
+        mSkeletonAdapter.setShimmerAngle(builder.mShimmerAngle);
+        mSkeletonAdapter.setShimmerDuration(builder.mShimmerDuration);
     }
 
     @Override
@@ -42,35 +46,74 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
 
     public static class Builder {
         private RecyclerView.Adapter mActualAdapter;
-        private RecyclerView mRecyclerView;
+        private final RecyclerView mRecyclerView;
+        private boolean mShimmer = true;
         private int mItemCount = 10;
         private int mItemResID = R.layout.layout_default_item_skeleton;
-        private int mColor;
-        private Context mContext;
+        private int mShimmerColor;
+        private int mShimmerDuration = 1000;
+        private int mShimmerAngle = 20;
 
-        public Builder(RecyclerView recyclerView, Context context) {
+        public Builder(RecyclerView recyclerView) {
             this.mRecyclerView = recyclerView;
-            this.mContext = context;
-
-            this.mColor = ContextCompat.getColor(context, R.color.shimmer_color);
+            this.mShimmerColor = ContextCompat.getColor(recyclerView.getContext(), R.color.shimmer_color);
         }
 
+        /**
+         * @param adapter the target recyclerView actual adapter
+         */
         public Builder adapter(RecyclerView.Adapter adapter) {
             this.mActualAdapter = adapter;
             return this;
         }
 
+        /**
+         * @param itemCount the child item count in recyclerView
+         */
         public Builder count(int itemCount) {
             this.mItemCount = itemCount;
             return this;
         }
 
-        public Builder color(int color) {
-            this.mColor = ContextCompat.getColor(mContext, color);
+        /**
+         * @param shimmer whether show shimmer animation
+         */
+        public Builder shimmer(boolean shimmer) {
+            this.mShimmer = shimmer;
             return this;
         }
 
-        public Builder load(int skeletonLayoutResID) {
+        /**
+         * the duration of the animation , the time it will take for the highlight to move from one end of the layout
+         * to the other.
+         *
+         * @param shimmerDuration Duration of the shimmer animation, in milliseconds
+         */
+        public Builder duration(int shimmerDuration) {
+            this.mShimmerDuration = shimmerDuration;
+            return this;
+        }
+
+        /**
+         * @param shimmerColor the shimmer color
+         */
+        public Builder color(@ColorRes int shimmerColor) {
+            this.mShimmerColor = ContextCompat.getColor(mRecyclerView.getContext(), shimmerColor);
+            return this;
+        }
+
+        /**
+         * @param shimmerAngle the angle of the shimmer effect in clockwise direction in degrees.
+         */
+        public Builder angle(@IntRange(from = 0, to = 30) int shimmerAngle) {
+            this.mShimmerAngle = shimmerAngle;
+            return this;
+        }
+
+        /**
+         * @param skeletonLayoutResID the loading skeleton layoutResID
+         */
+        public Builder load(@LayoutRes int skeletonLayoutResID) {
             this.mItemResID = skeletonLayoutResID;
             return this;
         }
@@ -78,7 +121,6 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         public RecyclerViewSkeletonScreen show() {
             RecyclerViewSkeletonScreen recyclerViewSkeleton = new RecyclerViewSkeletonScreen(this);
             recyclerViewSkeleton.show();
-
             return recyclerViewSkeleton;
         }
     }

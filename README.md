@@ -28,7 +28,7 @@ you can scan the qrcode for download demo apk
 In your build.gradle:
 
     dependencies {
-       compile 'com.ethanhua:skeleton:0.2.2'
+       compile 'com.ethanhua:skeleton:1.0.0'
     }
     
 
@@ -36,17 +36,25 @@ In your build.gradle:
   For RecyclerView:
  
        skeletonScreen = Skeleton.bind(recyclerView)
-                                .adapter(adapter)
-                                .load(R.layout.item_skeleton_news)
-                                .count(10)
-                                .color(R.color.shimmer_color)
-                                .show();
+                                 .adapter(adapter)
+                                 .load(R.layout.item_skeleton_news)
+                                 .show();
+                                
+                         
   For View: 
-   
+      
        skeletonScreen = Skeleton.bind(rootView)
-                                .load(R.layout.layout_img_skeleton)
-                                .color(R.color.shimmer_color)
-                                .show();
+                                 .load(R.layout.layout_img_skeleton)
+                                 .show();
+                                
+                       
+  More Config:
+  
+       .shimmer(true) //whether show shimmer animation .default is true
+       .count(10) //the recycler view item count. default is 10
+       .color(color) //the shimmer color default is #a2878787
+       .angle(20) //the shimmer angle default is 20;
+       .duration(1000)//the shimmer animation duration default is 1000;
                                 
   when data return you can call the method to hide skeleton loading view 
    
@@ -55,8 +63,6 @@ In your build.gradle:
  # Thanks
  
  https://github.com/team-supercharge/ShimmerLayout
-
- https://github.com/sharish/ShimmerRecyclerView
 
  # License
  
