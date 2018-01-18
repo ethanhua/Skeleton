@@ -2,13 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.1'
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 6
-        versionName "1.0.0"
+        versionCode 7
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -19,17 +17,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'io.supercharge:shimmerlayout:1.0.2'
-    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'io.supercharge:shimmerlayout:1.0.2'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
 }
 
 publish {
     userOrg = 'ethanhua'
     groupId = 'com.ethanhua'
     artifactId = 'skeleton'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     bintrayUser = 'ethanhua'
     bintrayKey = ''
     desc = 'a library provider a easy way to show skeleton loading view'

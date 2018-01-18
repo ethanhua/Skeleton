@@ -42,7 +42,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
     private void init() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         if (TYPE_LINEAR.equals(mType)) {
             recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             NewsAdapter adapter = new NewsAdapter();
@@ -50,6 +50,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                     .adapter(adapter)
                     .shimmer(true)
                     .angle(20)
+                    .frozen(false)
                     .duration(1200)
                     .count(10)
                     .load(R.layout.item_skeleton_news)

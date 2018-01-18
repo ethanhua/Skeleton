@@ -15,6 +15,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     private final RecyclerView mRecyclerView;
     private final RecyclerView.Adapter mActualAdapter;
     private final SkeletonAdapter mSkeletonAdapter;
+    private final boolean mRecyclerViewFrozen;
 
     private RecyclerViewSkeletonScreen(Builder builder) {
         mRecyclerView = builder.mRecyclerView;
@@ -26,12 +27,13 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         mSkeletonAdapter.setShimmerColor(builder.mShimmerColor);
         mSkeletonAdapter.setShimmerAngle(builder.mShimmerAngle);
         mSkeletonAdapter.setShimmerDuration(builder.mShimmerDuration);
+        mRecyclerViewFrozen = builder.mFrozen;
     }
 
     @Override
     public void show() {
         mRecyclerView.setAdapter(mSkeletonAdapter);
-        if (!mRecyclerView.isComputingLayout()) {
+        if (!mRecyclerView.isComputingLayout() && mRecyclerViewFrozen) {
             mRecyclerView.setLayoutFrozen(true);
         }
     }
@@ -39,7 +41,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     @Override
     public void hide() {
         mRecyclerView.setAdapter(mActualAdapter);
-        if (!mRecyclerView.isComputingLayout()) {
+        if (!mRecyclerView.isComputingLayout() && mRecyclerViewFrozen) {
             mRecyclerView.setLayoutFrozen(false);
         }
     }
@@ -53,6 +55,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         private int mShimmerColor;
         private int mShimmerDuration = 1000;
         private int mShimmerAngle = 20;
+        private boolean mFrozen = true;
 
         public Builder(RecyclerView recyclerView) {
             this.mRecyclerView = recyclerView;
@@ -115,6 +118,15 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
          */
         public Builder load(@LayoutRes int skeletonLayoutResID) {
             this.mItemResID = skeletonLayoutResID;
+            return this;
+        }
+
+        /**
+         * @param frozen whether frozen recyclerView during skeleton showing
+         * @return
+         */
+        public Builder frozen(boolean frozen) {
+            this.mFrozen = frozen;
             return this;
         }
 
