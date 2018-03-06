@@ -5,8 +5,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 7
-        versionName "1.0.1"
+        versionCode 8
+        versionName "1.1.0"
     }
     buildTypes {
         release {
@@ -18,7 +18,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'io.supercharge:shimmerlayout:1.0.2'
+    implementation 'io.supercharge:shimmerlayout:2.0.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
 }
@@ -27,7 +27,7 @@ publish {
     userOrg = 'ethanhua'
     groupId = 'com.ethanhua'
     artifactId = 'skeleton'
-    publishVersion = '1.0.1'
+    publishVersion = '1.1.0'
     bintrayUser = 'ethanhua'
     bintrayKey = ''
     desc = 'a library provider a easy way to show skeleton loading view'

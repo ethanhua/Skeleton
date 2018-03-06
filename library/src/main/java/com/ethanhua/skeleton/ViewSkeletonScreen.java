@@ -37,12 +37,23 @@ public class ViewSkeletonScreen implements SkeletonScreen {
     }
 
     private ShimmerLayout generateShimmerContainerLayout(ViewGroup parentView) {
-        ShimmerLayout shimmerLayout = (ShimmerLayout) LayoutInflater.from(mActualView.getContext()).inflate(R.layout.layout_shimmer, parentView, false);
+        final ShimmerLayout shimmerLayout = (ShimmerLayout) LayoutInflater.from(mActualView.getContext()).inflate(R.layout.layout_shimmer, parentView, false);
         shimmerLayout.setShimmerColor(mShimmerColor);
         shimmerLayout.setShimmerAngle(mShimmerAngle);
         shimmerLayout.setShimmerAnimationDuration(mShimmerDuration);
         View innerView = LayoutInflater.from(mActualView.getContext()).inflate(mSkeletonResID, shimmerLayout, false);
         shimmerLayout.addView(innerView);
+        shimmerLayout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(View v) {
+                shimmerLayout.startShimmerAnimation();
+            }
+
+            @Override
+            public void onViewDetachedFromWindow(View v) {
+                shimmerLayout.stopShimmerAnimation();
+            }
+        });
         shimmerLayout.startShimmerAnimation();
         return shimmerLayout;
     }
