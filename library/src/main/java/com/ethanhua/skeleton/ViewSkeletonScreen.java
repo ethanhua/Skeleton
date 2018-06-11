@@ -81,6 +81,9 @@ public class ViewSkeletonScreen implements SkeletonScreen {
 
     @Override
     public void hide() {
+        if (mViewReplacer.getTargetView() instanceof ShimmerLayout) {
+            ((ShimmerLayout) mViewReplacer.getTargetView()).stopShimmerAnimation();
+        }
         mViewReplacer.restore();
     }
 

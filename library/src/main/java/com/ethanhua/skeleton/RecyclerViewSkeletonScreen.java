@@ -41,9 +41,6 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
     @Override
     public void hide() {
         mRecyclerView.setAdapter(mActualAdapter);
-        if (!mRecyclerView.isComputingLayout() && mRecyclerViewFrozen) {
-            mRecyclerView.setLayoutFrozen(false);
-        }
     }
 
     public static class Builder {
