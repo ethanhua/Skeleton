@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="27"
+    build-mode="COLD"
+    density="420dpi"
+    format="10"
+    ir-eligibility="CLASS_ADDED"
+    plugin-version="3.0.1"
+    timestamp="1533842687132"
+    token="8441128279489975631"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="458" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="79" />
+    <task
+        name="verifier"
+        duration="16" />
+
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/outputs/apk/debug/sample-debug.apk"
+        type="SPLIT_MAIN" />
+
+    <build
+        build-mode="FULL"
+        timestamp="1533841398440"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/outputs/apk/debug/sample-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1533842687132"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/outputs/apk/debug/sample-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+
+</instant-run>

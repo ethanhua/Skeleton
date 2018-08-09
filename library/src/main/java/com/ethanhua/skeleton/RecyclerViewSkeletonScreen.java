@@ -1,10 +1,13 @@
 package com.ethanhua.skeleton;
 
+import android.support.annotation.ArrayRes;
 import android.support.annotation.ColorRes;
 import android.support.annotation.IntRange;
 import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+
+import java.util.List;
 
 /**
  * Created by ethanhua on 2017/7/29.
@@ -23,6 +26,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         mSkeletonAdapter = new SkeletonAdapter();
         mSkeletonAdapter.setItemCount(builder.mItemCount);
         mSkeletonAdapter.setLayoutReference(builder.mItemResID);
+        mSkeletonAdapter.setArrayOfLayoutReferences(builder.mItemsResIDArray);
         mSkeletonAdapter.shimmer(builder.mShimmer);
         mSkeletonAdapter.setShimmerColor(builder.mShimmerColor);
         mSkeletonAdapter.setShimmerAngle(builder.mShimmerAngle);
@@ -49,6 +53,7 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
         private boolean mShimmer = true;
         private int mItemCount = 10;
         private int mItemResID = R.layout.layout_default_item_skeleton;
+        private int[] mItemsResIDArray;
         private int mShimmerColor;
         private int mShimmerDuration = 1000;
         private int mShimmerAngle = 20;
@@ -115,6 +120,14 @@ public class RecyclerViewSkeletonScreen implements SkeletonScreen {
          */
         public Builder load(@LayoutRes int skeletonLayoutResID) {
             this.mItemResID = skeletonLayoutResID;
+            return this;
+        }
+
+        /**
+         * @param skeletonLayoutResIDs the loading array of skeleton layoutResID
+         */
+        public Builder loadArrayOfLayouts(@ArrayRes int[] skeletonLayoutResIDs) {
+            this.mItemsResIDArray = skeletonLayoutResIDs;
             return this;
         }
 

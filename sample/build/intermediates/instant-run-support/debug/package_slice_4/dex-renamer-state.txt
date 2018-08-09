@@ -1,0 +1,4 @@
+#Thu Aug 09 12:24:51 PDT 2018
+base.0=/Users/blazvantur/Projects/EqualEyes/Android/Skeleton_library_fork/Skeleton/sample/build/intermediates/transforms/dexMerger/debug/4
+path.0=classes.dex
+renamed.0=classes.dex
