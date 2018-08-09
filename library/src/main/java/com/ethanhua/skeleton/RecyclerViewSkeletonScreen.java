@@ -7,8 +7,6 @@ import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.List;
-
 /**
  * Created by ethanhua on 2017/7/29.
  */
