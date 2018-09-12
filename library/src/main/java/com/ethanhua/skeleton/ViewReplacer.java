@@ -57,6 +57,9 @@ public class ViewReplacer {
     public void restore() {
         if (mSourceParentView != null) {
             mSourceParentView.removeView(mCurrentView);
+            if (mSourceView.getParent() != null) {
+                ((ViewGroup)mSourceView.getParent()).removeView(mSourceView);
+            }
             mSourceParentView.addView(mSourceView, mSourceViewIndexInParent, mSourceViewLayoutParams);
             mCurrentView = mSourceView;
             mTargetView = null;
