@@ -68,7 +68,7 @@ dependencies {
                             
   when data return you can call the method to hide skeleton loading view 
    ```java
-  skeletonScreen.hide()
+  skeletonScreen.hide();
    ```
        
         
