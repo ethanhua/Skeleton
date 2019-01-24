@@ -42,6 +42,10 @@ public class ViewSkeletonScreen implements SkeletonScreen {
         shimmerLayout.setShimmerAngle(mShimmerAngle);
         shimmerLayout.setShimmerAnimationDuration(mShimmerDuration);
         View innerView = LayoutInflater.from(mActualView.getContext()).inflate(mSkeletonResID, shimmerLayout, false);
+        ViewGroup.LayoutParams lp = innerView.getLayoutParams();
+        if (lp != null) {
+            shimmerLayout.setLayoutParams(lp);
+        }
         shimmerLayout.addView(innerView);
         shimmerLayout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
             @Override

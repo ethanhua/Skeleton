@@ -5,8 +5,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 9
-        versionName "1.1.1"
+        versionCode 10
+        versionName "1.1.2"
     }
     buildTypes {
         release {
@@ -27,7 +27,7 @@ publish {
     userOrg = 'ethanhua'
     groupId = 'com.ethanhua'
     artifactId = 'skeleton'
-    publishVersion = '1.1.1'
+    publishVersion = '1.1.2'
     bintrayUser = 'ethanhua'
     bintrayKey = ''
     desc = 'a library provider a easy way to show skeleton loading view'

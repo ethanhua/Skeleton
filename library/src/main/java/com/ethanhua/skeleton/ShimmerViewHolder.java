@@ -2,6 +2,7 @@ package com.ethanhua.skeleton;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 /**
@@ -13,6 +14,11 @@ public class ShimmerViewHolder extends RecyclerView.ViewHolder {
     public ShimmerViewHolder(LayoutInflater inflater, ViewGroup parent, int innerViewResId) {
         super(inflater.inflate(R.layout.layout_shimmer, parent, false));
         ViewGroup layout = (ViewGroup) itemView;
-        inflater.inflate(innerViewResId, layout, true);
+        View view = inflater.inflate(innerViewResId, layout, false);
+        ViewGroup.LayoutParams lp = view.getLayoutParams();
+        if (lp != null) {
+            layout.setLayoutParams(lp);
+        }
+        layout.addView(view);
     }
 }
