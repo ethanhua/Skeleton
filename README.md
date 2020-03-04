@@ -29,7 +29,7 @@ you can scan the qrcode for download demo apk
 In your build.gradle:
 ```
 dependencies {
-       implementation 'com.ethanhua:skeleton:1.1.2'
+       implementation 'com.ethanhua:skeleton:2.0.0'
        implementation 'io.supercharge:shimmerlayout:2.1.0'
     }
 ```
