@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 26
@@ -6,7 +7,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 10
-        versionName "1.1.2"
+        versionName "2.0.0"
     }
     buildTypes {
         release {
@@ -21,15 +22,19 @@ dependencies {
     implementation 'io.supercharge:shimmerlayout:2.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 publish {
     userOrg = 'ethanhua'
     groupId = 'com.ethanhua'
     artifactId = 'skeleton'
-    publishVersion = '1.1.2'
+    publishVersion = '2.0.0'
     bintrayUser = 'ethanhua'
     bintrayKey = ''
     desc = 'a library provider a easy way to show skeleton loading view'
     website = 'https://github.com/ethanhua/Skeleton'
+}
+repositories {
+    mavenCentral()
 }
