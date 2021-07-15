@@ -152,6 +152,10 @@ public class ViewSkeletonScreen implements SkeletonScreen {
             skeletonScreen.show();
             return skeletonScreen;
         }
+        
+        public ViewSkeletonScreen build() {
+            return new ViewSkeletonScreen(this);
+        }
 
     }
 }
