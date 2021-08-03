@@ -1,7 +1,8 @@
 package com.ethanhua.skeleton;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by ethanhua on 2017/7/29.

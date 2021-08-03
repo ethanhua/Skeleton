@@ -1,9 +1,10 @@
 package com.ethanhua.skeleton;
 
-import android.support.annotation.IntRange;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.annotation.IntRange;
+import androidx.recyclerview.widget.RecyclerView;
 
 import io.supercharge.shimmerlayout.ShimmerLayout;
 
